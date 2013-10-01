@@ -16,3 +16,8 @@ tmp
 .yardoc
 _yardoc
 doc/
+
+# other app-specific stuff:
+output.log
+settings.rb
+
