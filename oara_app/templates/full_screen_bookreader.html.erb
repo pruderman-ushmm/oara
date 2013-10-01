@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+    <title>bookreader demo</title>
+    
+    <link rel="stylesheet" type="text/css" href="/br/css/BookReader.css"/>
+    <!-- Custom CSS overrides -->
+    <link rel="stylesheet" type="text/css" href="/br/css/BookReaderDemo.css"/>
+    <link rel="stylesheet" type="text/css" href="/br/css/BookReader_UshmmColors.css"/>
+
+    <script type="text/javascript" src="http://www.archive.org/includes/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="http://www.archive.org/bookreader/jquery-ui-1.8.5.custom.min.js"></script>
+
+    <script type="text/javascript" src="http://www.archive.org/bookreader/dragscrollable.js"></script>
+    <script type="text/javascript" src="http://www.archive.org/bookreader/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="http://www.archive.org/bookreader/jquery.ui.ipad.js"></script>
+    <script type="text/javascript" src="http://www.archive.org/bookreader/jquery.bt.min.js"></script>
+
+    <script type="text/javascript" src="/br/js/BookReader.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            br.ushmmBookGo('<%= path_info_data %>');
+        })
+    </script>
+</head>
+<body style="background-color: ##939598;">
+
+<div id="BookReader">
+    Internet Archive BookReader Demo    <br/>
+    
+    <noscript>
+    <p>
+        The BookReader requires JavaScript to be enabled. Please check that your browser supports JavaScript and that it is enabled in the browser settings.  You can also try one of the <a href="http://www.archive.org/details/goodytwoshoes00newyiala"> other formats of the book</a>.
+    </p>
+    </noscript>
+</div>
+
+<script type="text/javascript" src="/br/js/UshmmBookReader.js"></script>
+
+</body>
+</html>

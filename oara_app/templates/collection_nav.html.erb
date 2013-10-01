@@ -1,0 +1,60 @@
+<h3>by Intellectual Hierarchy</h3>
+<% for a in collection.ancestors %>
+	<br/>[<%= a.level_type %>] <a href="/br/nav/<%= a.designation_path %>"><%= a.designation %> - <i><%= a.title %></i></a>
+<% end %>
+
+
+<h3>[<%= collection.level_type %>] <%= collection.designation %> - <i><%= collection.title %></i></h3>
+
+<% if collection.book_title %>
+	<a href="/br/book_nav/<%= collection.designation_path %>">View as a book: <%= collection.book_title %></a>
+<% end %>
+
+<hr/>
+
+
+
+<ul>
+	<% for c in collection.children %>
+		<li>[<%= c.level_type %>] <a href="/br/nav/<%= c.designation_path %>"><%= c.designation %></a> — <i><%= c.title %></i>
+
+			<ul>
+				<% if c.container %>
+					<% for l in c.container %>
+						<li>
+						<small>
+	<!--					<li><small><%=l%></small></li>   -->
+						<% l.ancestors.each_with_index do |a, i| %>
+							<% if i > 0 %>
+								→
+							<% end %>
+							[<%= a.level_type %>] <a href="/br/container/<%= a.designation_path %>"><%= a.designation %></a>
+						<% end %>
+						</small>
+						</li>
+					<% end %>
+				<% end %>
+			</ul>
+		</li>
+		<br/>
+	<% end %>
+</ul>
+
+
+
+
+<p>Errors:</p>
+<% for e in collection.component_errors %>
+	<li><%=e%></li>
+<% end %>
+
+<hr/>
+
+<% if collection.asset %>
+	<pre>
+		<%=collection.asset %>
+	</pre>
+	<img src="<%=collection.asset.fq_derivative_url %>" />
+<% end %>
+
+

@@ -1,0 +1,19 @@
+/*
+ * Custom overrides for BookReader Demo.
+ */
+
+/* Hide print and embed functionality */
+#BRtoolbar .embed, .print {
+    display: none;
+}
+a.logo {
+    display: block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    background: transparent url(http://beta.ushmm.org/a/titles/logo-foremost.gif) no-repeat 0 0;
+    background: transparent url(http://beta.ushmm.org//a/favicon.ico) no-repeat 0 0;
+    zzbackground: none;
+    zzbackground-color: red;
+}

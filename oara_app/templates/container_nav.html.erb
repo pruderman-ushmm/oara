@@ -1,0 +1,27 @@
+<h2>This is the container nav page.</h2>
+
+
+<h3>by Container</h3>
+<% for a in container.ancestors %>
+	<br/>[<%= a.level_type %>] <a href="/br/container/<%= a.designation_path %>"><%= a.designation %></a>
+<% end %>
+
+<hr/>
+<p>Contains:</p>
+<% if container.contained_component %>
+	<% for a in container.contained_component.ancestors %>
+		<br/>[<%= a.level_type %>] <a href="/br/nav/<%= a.designation_path %>"><%= a.designation %></a> — “<%= a.title %>”
+	<% end %>
+<% else %>
+	(no contained components)
+<% end %>
+
+
+<hr/>
+
+<ul>
+	<% for c in container.children %>
+		<li>[<%= c.level_type %>] <a href="/br/container/<%= c.designation_path %>"><%= c.designation %></a></li>
+	<% end %>
+</ul>
+

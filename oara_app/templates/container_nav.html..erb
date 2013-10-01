@@ -1,0 +1,20 @@
+<h2>This is the container nav page.</h2>
+
+
+<h3><%= container.title %></h3>
+[<%= container.level_type %>] <%= container.designation %> - <i><%= container.title %></i>
+
+<hr/>
+
+<ul>
+	<li>Parent: [<%= container.parent.level_type %>] <a href="/br/nav/<%= container.parent.designation_path %>"><%= container.parent.designation %> - <i><%= container.parent.title %></i></a></li>
+	<br/>
+	<% for c in container.children %>
+		<li>[<%= c.level_type %>] <a href="/br/nav/<%= c.designation_path %>"><%= c.designation %> - <i><%= c.title %></i> (location: <%= c.container %>)</a></li>
+	<% end %>
+</ul>
+
+
+	<% for e in container.component_errors %>
+		<li><%=e%></li>
+	<% end %>
