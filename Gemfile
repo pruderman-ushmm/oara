@@ -15,3 +15,6 @@ gem 'awesome_print'
 
 gem 'rspec'
 gem 'yard'
+
+gem "rake"
+gem "codeclimate-test-reporter", group: :test, require: nil
